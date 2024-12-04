@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block page_title %}Analytics{% endblock %}
+{% block content %}
+    <div class="analytics-container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Search Engine Analytics</h2>
+            <a href="{{ url_for('search_page') }}" class="btn btn-secondary">Back to Search</a>
+        </div>
+        
+        <div class="mb-4">
+            <p><strong>Total queries:</strong> {{ total_queries }}</p>
+            <p><strong>Total clicks on documents:</strong> {{ total_clicks }}</p>
+        </div>
+        
+        <div class="mb-4">
+            <h4>Most Popular Documents</h4>
+            <ul class="list-group">
+                {% for doc, count in most_clicked_docs %}
+                    <li class="list-group-item">
+                        <strong>Document ID:</strong> {{ doc }} - <strong>Clicks:</strong> {{ count }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="mb-4">
+            <h4>Queries Performed</h4>
+            <ul class="list-group">
+                {% for query in user_queries %}
+                    <li class="list-group-item">
+                        <strong>Query:</strong> {{ query.query }} ({{ query.num_terms }} terms) - <em>{{ query.timestamp }}</em>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div>
+            <h4>Registered Clicks</h4>
+            <ul class="list-group">
+                {% for click in click_data %}
+                    <li class="list-group-item">
+                        <strong>Document:</strong> {{ click.doc_id }},
+                        <strong>Query:</strong> {{ click.query }},
+                        <strong>Dwell Time:</strong> {{ click.dwell_time }} seconds
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

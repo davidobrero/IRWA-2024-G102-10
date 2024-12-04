@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block page_title %}Search Results{% endblock %}
+{% block content %}
+    <div class="results-container">
+        <h2>Found <strong>{{ results|length }}</strong> results for "{{ query }}"</h2>
+        <div class="back-btn mt-4">
+            <a href="/" class="btn btn-secondary">Back to search</a>
+        </div>
+        <hr>
+        {% for item in results %}
+            <div class="pb-3">
+                <div class="doc-title">
+                    <a href="{{ url_for('document_details', id=item.doc_id) }}">{{ item.title }}</a>
+                </div>
+                <div class="doc-summary">
+                    <p>{{ item.summary }}</p>
+                </div>
+                <div class="doc-desc">
+                    <p>Date: {{ item.date }} — Hashtags: {{ item.hashtags }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

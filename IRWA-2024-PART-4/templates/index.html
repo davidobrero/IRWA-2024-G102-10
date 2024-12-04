@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block page_title %}Search{% endblock %}
+{% block content %}
+    <div class="centered">
+        <form class="d-flex" method="POST" action="/search">
+            <input class="form-control me-2" name="search-query" type="search" placeholder="Search" aria-label="Search" autofocus>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+{% endblock %}

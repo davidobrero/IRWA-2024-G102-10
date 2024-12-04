@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %}Search{% endblock %}
+{% block content %}
+    <div class="centered">
+        <form class="d-flex mb-3" method="POST" action="/search">
+            <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search" autofocus>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <a href="{{ url_for('analytics_dashboard') }}" class="btn btn-info">View Analytics</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+.container {
+    max-width: 800px;
+    padding-top: 50px;
+    position: relative;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #404246;
+}
+
+.centered {
+    text-align: center;
+}
+
+.header {
+    font-size: 1.7em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.header img {
+    margin-bottom: 20px;
+}
+
+.back-btn a {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.back-btn a:hover {
+    background-color: #0056b3;
+}
+
+.centered p {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 40px;
+}

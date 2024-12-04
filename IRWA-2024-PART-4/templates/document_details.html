@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_title %}Tweet Details{% endblock %}
+{% block content %}
+    <div class="doc-details-container text-center">
+        <h2 class="mb-4">Tweet Details</h2>
+        
+        <div class="tweet-card">
+            <div class="tweet-content">
+                <h4 class="tweet-title">Tweet:</h4>
+                <p class="tweet-text">{{ ' '.join(tweet.tweet) }}</p>
+            </div>
+
+            <div class="tweet-meta">
+                <div class="tweet-info">
+                    <p><strong>Date:</strong> {{ tweet.date }}</p>
+                    <p><strong>Hashtags:</strong> {{ ', '.join(tweet.hashtags) }}</p>
+                </div>
+                <div class="tweet-likes-retweets">
+                    <p><strong>Likes:</strong> {{ tweet.likes }}</p>
+                    <p><strong>Retweets:</strong> {{ tweet.retweets }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-btn mt-4">
+            <a href="/" class="btn btn-secondary">Back to search</a>
+            <a href="{{ url_for('search_action') }}" class="btn btn-primary">Back to results</a>
+        </div>
+    </div>
+{% endblock %}
